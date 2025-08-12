@@ -1,0 +1,6 @@
+{
+    "date":{
+        "formatFunctionName":"format_date",
+        "fields":["Account Open Date","Last Transaction Date","Going to DEAF on (Date)","Locker Issue Date","Overdue Since"]
+    }
+}

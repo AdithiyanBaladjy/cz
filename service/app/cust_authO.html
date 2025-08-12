@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  </head>
+  <body>
+    <!-- <h1 id="ctpgtitl"><span id="ctpgtitl0">UBI Bank</span><span id="ctpgtitl1">Customer Authentication Widget</span></h1>
+    <p style="text-align: center;">Tick the checkbox only after the Authentication Criteria is fulfilled </p> -->
+    <table id="ctathtab" class="ctperinf" cellpadding="0" cellspacing="0" border="0" style="text-align: left !important; background-color: #fff;">
+      <tr>
+        <th class="thdat">Authentication Criteria</th>
+        <th class="thdat" style="border-left: 0.5px solid #fff; border-right: 0.5px solid #fff;">Authentication Data</th>
+        <th class="thdat" style="text-align: center !important;">Authentication Done</th>
+      </tr>
+      <tr>
+        <td class="tdtit" style="color: #616e88;">Name</td>
+        <td class="tdtit" id="tdactnam"></td>
+        <td class="tddat" id="ctatnam"><input type="checkbox" class="vfy" id="ctatnamcb" name="Name" value="Yes"/> </td>
+      </tr>
+      <tr>
+        <td class="tdtit" style="color: #616e88;">Date of Birth</td>
+        <td class="tdtit" id="tdactdob"></td>
+        <td class="tddat" id="ctatdob"> <input type="checkbox" class="vfy" id="ctatdobcb" name="Date Of Birth" value="Yes"/> </td>
+      </tr>
+      <tr>
+        <td class="tdtit" style="color: #616e88;">Mailing Address</td>
+        <td class="tdtit" id="tdactadd"></td>
+        <td class="tddat" id="ctatadd"><input type="checkbox" class="vfy" id="ctataddcb" name="Mailing Address" value="Yes"/></td>
+      </tr>
+      <!--
+        Pan number removed
+      -->
+      <tr style="display: none;">
+        <td class="tdtit" style="color: #616e88;">PAN Number</td>
+        <td class="tdtit" id="tdactpan"></td>
+        <td class="tddat" id="ctatpan"><input type="checkbox" class="vfy" id="ctatpancb" name="PAN Card" value="Yes"/></td>
+      </tr>
+      <tr>
+        <td class="tdtit" style="color: #616e88;">Email Id</td>
+        <td class="tdtit" id="tdacteid"></td>
+        <td class="tddat" id="ctateid"><input type="checkbox" class="vfy" id="ctateidcb" name="Email" value="Yes"/></td>
+      </tr>
+      <tr>
+        <td class="tdtit" style="color: #616e88;">Mobile</td>
+        <td class="tdtit" id="tdactrmn"></td>
+        <td class="tddat" id="ctatrmn"><input type="checkbox" class="vfy" id="ctatrmncb" name="Phone" value="Yes"/></td>
+      </tr>
+      <tr>
+        <td class="tdtit" style="color: #616e88;">Phone</td>
+        <td class="tdtit" id="tdactph"></td>
+        <td class="tddat" id="ctatph"><input type="checkbox" class="vfy" id="ctatphcb" name="Mobile Number" value="Yes"/></td>
+      </tr>
+      <!-- <tr>
+        <td class="tdtit" style="color: #616e88;">Pincode</td>
+        <td class="tdtit" id="tdactpcd"></td>
+        <td class="tddat" id="ctatpcd"><input type="checkbox" class="vfy" id="ctatpcdcb" name="Pincode" value="Yes"/></td>
+      </tr> -->
+      <tr>
+        <td class="tdtit" style="color: #616e88;">Base Branch</td>
+        <td class="tdtit" id="tdactbbch"></td>
+        <td class="tddat" id="ctatbbch"><input type="checkbox" class="vfy" id="ctatbbchcb" name="Base Branch" value="Yes"/></td>
+      </tr>
+      <tr>
+        <td class="tdtit" style="color: #616e88;">Last Ten Transactions</td>
+        <td class="tdtit" style="position:relative;" id="tdactms"><div style="display:flex;flex-direction:row;"><select style="min-width:145px" id="ms-verify-dropdown"><option selected="selected">Loading...</option></select><div class="spacer-block"></div><div class="crm-style-btn" style="position:relative;" onclick="show_mini_statement(this)">Show</div></div></td>
+        <td class="tddat" id="ctatms"><input type="checkbox" class="vfy" id="ctatmscb" name="Mini statement" value="Yes"/></td>
+      </tr>
+    </table>
+    <div style="width: 100%; margin-top: 2%; display: flex;flex-direction: row;align-items: center;justify-content: center;">
+      <input type="submit" style="padding: 1% 2% !important; box-shadow: 0px 2px 2px #aaa;" class="submit-btn" value="Verify" onclick="send()"><input type="reset" style="margin-left:1%; padding: 1% 2% !important; background-color: #fff; border-radius: 4px; box-shadow: 0px 2px 2px #aaa;" class="clr-btn" value="Clear" onclick="clearData()">
+    </div>
+    <!--
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://live.zwidgets.com/js-sdk/1.1/ZohoEmbededAppSDK.min.js"></script>
+      <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    -->
+    <script src="./script/script_s360.js"></script>
+  </body>
+</html>

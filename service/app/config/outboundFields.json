@@ -1,0 +1,27 @@
+{
+    "__README__":"append __date__ for date fields & __dateStr__ for date in string format (like 12 Mar 2023) so that date formatting will be taken care in the code, append __currency__ for amount/currency fields so that amount formatting will be taken care in the code",
+    "Account Open Date__date__":["A_c_Open_Date"],
+    "Status":["Account_Status"],
+    "Branch Name":["SOL_DESC",{"type":"recursive","fields":["Branch_Sol_ID","Name"]},{"type":"recursive","fields":["Branch_Name","name"]}],
+    "Scheme Name":["SOL_DESC",{"type":"recursive","fields":["Branch_Sol_ID","Name"]}],
+    "Scheme Code":["Scheme_Code","SCHM_CODE"],
+    "Account Balance__currency__":["Balance_Currency"],
+    "Last Transaction Date__dateStr__":["LAST_TRAN_DATE"],
+    "Scheme Type":["SCHM_DESC"],
+    "Account Status Date__dateStr__":["ACCT_STATUS_DATE"],
+    "Account Status":["Account_Status"],
+    "LAST TRAN DATE__dateStr__":["LAST_TRAN_DATE"],
+    "locker_opacc":["OPACC"],
+    "Locker Issue Date__date__":["OPEN_DATE"],
+    "Occupied (Y/N)":["occupied_y_n"],
+    "Overdue Rent":["DUE_RENT"],
+    "Overdue Since":["days_since_overdue"],
+    "LOCKER_NO":["LOCKER_NO"],
+    "LOCKER_TYPE":["LOCKER_TYPE"],
+    "SMA Status":["SMA_Status"],
+    "Overdue Amount__currency__":["Overdue_Amount"],
+    "Overdue Since__date__":["Overdue_Since"],
+    "Outstanding Amount__currency__":["Balance_Currency"],
+    "Nomination (Y/N)":["Nomination_Available_Y_N"]
+    
+}

@@ -1,0 +1,9 @@
+{
+    "tabs":[
+        {
+            "tabName":"Send SMS / Whatsapp",
+            "index":"sendSMS.html",
+            "scripts":["./script/extensionScript.js"]
+        }
+    ]
+}
