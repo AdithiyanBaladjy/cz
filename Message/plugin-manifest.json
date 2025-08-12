@@ -1,0 +1,53 @@
+{
+  "locale": [
+    "en"
+  ],
+  "service": "DESK",
+  "storage": false,
+  "type": "org",
+  "whiteListedDomains": [
+    "https://desk.zoho.com",
+    "https://service.unionbankofindia.co.in",
+    "https://crm.zoho.com",
+    "https://ucrm.unionbankofindia.co.in",
+    "https://desk.zoho.in",
+    "https://www.zohoapis.in",
+    "https://ucrmapi.unionbankofindia.co.in",
+    "https://analytics.unionbankofindia.co.in",
+    "http://smsdc.unionbankofindia.co.in:8282"
+  ],
+  "modules": {
+    "widgets": [
+      {
+        "location": "desk.ticket.detail.subtab",
+        "url": "/app/widget.html",
+        "name": "Desk Extension",
+        "logo": "/app/img/logo.png",
+        "icon": "/app/img/icon.png"
+      }
+    ]
+  },
+  "cspDomains": {
+    "connect-src": []
+  },
+  "zohoAuthorisation": {
+    "type":"connectors",
+    "connectionLinkName": "smstemplateextension",
+    "connectionName": "smstemplateextension",
+    "serviceName": "zlabs_integration",
+    "userAccess": false,
+    "isUserDefinedService": false,
+    "sharedBy": "44202",
+    "scope": [
+      "Desk.tickets.ALL",
+      "Desk.contacts.ALL",
+      "Desk.basic.ALL",
+      "ZohoAnalytics.data.all",
+      "ZohoCRM.functions.execute.READ"
+    ]
+  },
+  "connectors": [],
+  "config": [],
+  "moduleSupport": true
+}
+

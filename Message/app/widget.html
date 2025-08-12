@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Zoho Desk - Apps</title>
+	<link rel="stylesheet" href="./css/LatoFont.css">
+	<link rel="stylesheet" href="./css/extensionStyles.css">
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script> -->
+	<!---->
+	 <!--Font-awesome inclusion-->
+	 <link href="lib/font_awesome/css/all.css" rel="stylesheet">
+	 <script defer src="lib/font_awesome/js/all.js"></script>
+	 <link href="lib/font_awesome/css/fontawesome.css" rel="stylesheet">
+	 <link href="lib/font_awesome/css/brands.css" rel="stylesheet">
+	 <link href="lib/font_awesome/css/solid.css" rel="stylesheet">
+	 <script defer src="lib/font_awesome/js/brands.js"></script>
+	 <script defer src="lib/font_awesome/js/solid.js"></script>
+	 <script defer src="lib/font_awesome/js/fontawesome.js"></script>
+</head>
+
+<body>
+	<div class="root-parent">
+		<div class="left-section-parent">
+			<div class="new-template-row">
+				<div class="left-section-header">
+					Templates <i class="fa fa-neuter search-icon" onclick="openSearch()"></i>
+					<div class="search-text-container hide" id="searchTextContainer">
+						<i class="fa fa-neuter search-icon" style="color: var(--grey-default); transform:rotate(-30deg);"></i> <input id="searchTextBox" class="form-template-name-input-box" placeholder="search templates"/> <i class="fa fa-xmark" style="margin-left: 5%; position: relative; top: 3px;cursor: pointer;" onclick="closeSearch()"></i>
+					</div>
+				</div>
+				<div class="submit-btn align-right hide" id="createTemplateBtn" onclick="showCreatePopUp(false)">
+					Add
+				</div>
+			</div>
+			<div class="template-name-container hide" id="templateNameClone">
+			</div>
+			<div class="delete-btn align-right hide" id="deleteBtnClone">
+				<i class="fa fa-trash"></i>
+			</div>
+			<div class="templates-parent" id="templatesParent">
+				
+			</div>
+			
+		</div>
+		
+		<div class="template-view">
+			<div class="template-header-container">
+				<div class="template-name-header" id="templateNameElem" style="min-width: 50px;">
+				 Test Template
+				</div>
+				<div id="templateEditBtn" style="cursor: pointer; margin-left: 1%;position: relative;top: 2px;color: var(--blue-cta);" class="hide"><i class="fa fa-pen"></i></div>
+			</div>
+			<div class="template-body-container" id="templateBodyElem">
+				Dear Customer, Your grievance for {$sub_area} with ticket ID ${ticketId} has been lodged successfully and will be attended shortly - Union Bank of India
+			</div>
+			<div class="template-send-row">
+				<div id="smsInfoDiv" style="margin-right: 5%;"></div>
+				<div class="submit-btn align-right" id="sendSmsElem" onclick="sendSms(this)">
+					Send
+				</div>
+			</div>
+		</div>
+		<div class="swipe-up-screen hide  flex-parent-center-align" id="notifPopupBackdrop" style="background-color: var(--transparent-grey);">
+			<div class="pop-up" id="popUpFg">
+				<div class="row" id="popUpContent"></div>
+				<div class="row" id="actionPanel" style="margin-top:1%"></div>
+				<div class="row" id="popNotifMsg" style="margin-top:0.5%"></div>
+				<div id="actionBtnClone" class="submit-btn hide"></div><div class="submit-btn hide" id="cancelBtnClone" style="margin-left: 2%;background-color: var(--pure-white);color:var(--grey-default);border: 1px solid var(--grey-default);" onclick="closePopUp('notifPopupBackdrop')">Cancel</div>
+			</div>
+		</div>
+		<div class="swipe-up-screen hide" id="swipeUpScreen">
+			<div class="create-template-row">
+				<div class="left-section-header" id="templateEditHeader">Create template</div>
+				<div><input type="text" id="formTemplateName" placeholder="Template Name" class="form-template-name-input-box"/></div>
+			</div>
+			<div class="create-template-row">
+				<textarea id="formTemplateBody" placeholder="Template to be sent" class="form-template-body"></textarea>
+			</div>
+			<div class="create-template-row" style="font-size: 0.8em; color:var(--blue-cta); padding-top: 0; padding-bottom: 0;">
+				Type '#{' to insert ticket fields into template
+			</div>
+			<div class="create-template-row" style="align-items:center; justify-content:flex-end;width: 90%;">
+				<div id="errorMsg" style="margin-right:5%;"></div>
+				<div class="submit-btn" onclick="upsertTemplate(this)">Save</div>
+				<div class="submit-btn" style="margin-left: 2%;background-color: var(--pure-white);color:var(--grey-default);border: 1px solid var(--grey-default);" onclick="closeCreatePopUp()">Cancel</div>
+			</div>
+			<div class="field-list-backdrop hide" id="ticketFieldsPop">
+				<div class="field-list-container" style="width: 250px;">
+					<div class="create-template-row">
+						<div class="left-section-header" style="padding-bottom: 5%;">Insert Ticket Fields:</div>
+					</div>
+					<div class="fields-search-box-container" style="margin-bottom: 3%;">
+						<i class="fa fa-neuter" style="transform: rotate(-30deg);"></i>
+						<input type="text" placeholder="Field Name" id="fieldSearchBox" class="fields-search-box"/>
+					</div>
+					<div class="fields-list-parent" style="margin-bottom: 3%;" id="fieldsParent"> 
+						
+					</div>
+					<div class="template-name-container hide" id="fieldsItemClone"></div>
+					<div class="create-template-row" style="align-items:center; justify-content:flex-end;padding-bottom: 3%;width: 99%;">
+						<div class="submit-btn" onclick="insertFieldInTemplate()">Insert</div><div class="submit-btn" style="margin-left: 2%;background-color: var(--pure-white);color:var(--grey-default);border: 1px solid var(--grey-default);" onclick="closeFieldsPopUp()">Cancel</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./js/ZohoDeskClientSDK.min.js"></script>
+	<script src="./js/extensionScript.js"></script>
+
+</body>
+
+</html>

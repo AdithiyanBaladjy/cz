@@ -1,0 +1,30 @@
+/* $Id$ */
+@charset "utf-8";
+@font-face {
+    font-family: "LatoRegular";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/LatoLatin-Regular.woff2") format("woff2");
+}
+@font-face {
+    font-family: "LatoSemibold";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/LatoLatin-Semibold.woff2") format("woff2");
+}
+@font-face {
+    font-family: "LatoBold";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/LatoLatin-Bold.woff2") format("woff2");
+}
+
+:root {
+  --zd_fallback_font: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --zd_regular: LatoRegular, var(--zd_fallback_font); 
+  --zd_semibold: LatoSemibold, var(--zd_fallback_font);
+  --zd_bold: LatoBold, var(--zd_fallback_font);
+}
